@@ -1,0 +1,127 @@
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in; /* Animation for overlay */
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 30px; /* Increased padding for a spacious feel */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Softer shadow */
+    width: 400px; /* Set a fixed width for the modal */
+    position: relative;
+    animation: slideIn 0.3s ease-in; /* Animation for modal */
+    transform: scale(0.95); /* Initial scale for effect */
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+  }
+  
+  .modal-content.show {
+    transform: scale(1); /* Scale to normal on show */
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 24px; /* Larger font size for better visibility */
+    color: #333; /* Dark color for better visibility */
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s; /* Smooth transition for effects */
+    padding: 8px; /* Add some padding for better click area */
+    border-radius: 50%; /* Round button for a modern look */
+    display: flex; /* Flexbox for center alignment */
+    justify-content: center; /* Center the icon */
+    align-items: center; /* Center the icon */
+  }
+  
+  .close-modal:hover {
+    color: #e63946; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: rgba(230, 230, 230, 0.5); /* Light background on hover */
+  }
+  
+  .close-modal:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add focus ring */
+  }
+  
+  .modal-content h2 {
+    margin-top: 0; /* Remove margin on top */
+    font-size: 24px; /* Larger font size for the title */
+    color: #333; /* Dark color for better readability */
+  }
+  
+  .modal-content form div {
+    margin-bottom: 15px; /* Space between form fields */
+  }
+  
+  .modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666; /* Softer label color */
+  }
+  
+  .modal-content input {
+    width: 100%; /* Full-width input */
+    padding: 12px; /* Increased padding for inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 6px; /* Rounded input corners */
+    box-sizing: border-box; /* Include padding in width */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border transition */
+  }
+  
+  .modal-content input:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow effect */
+  }
+  
+  .modal-content button {
+    width: 100%; /* Full-width button */
+    padding: 12px; /* Padding for buttons */
+    background-color: #007bff; /* Primary color */
+    color: white; /* White text for contrast */
+    border: none; /* Remove border */
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+  }
+  
+  .modal-content button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+  }
+  
+  /* Animations for modal */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
